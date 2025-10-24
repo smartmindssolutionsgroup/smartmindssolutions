@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Minds Solutions - Empowering Small Businesses with Smart IT</title>
+  <link rel="icon" type="image/png" href="./TransperntLOGO.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+    
+    /* ---------------------------------------- */
+    /* Theme Variables */
+    :root {
+      --bg-body: #0d1117;
+      --bg-section: #0d1117;
+      --bg-card: #1f2937;
+      --bg-header: rgba(13, 17, 23, 0.9);
+      --text-primary: #ffffff;
+      --text-secondary: #9ca3af;
+      --border-color: #1f2937;
+      --shadow-color: rgba(0, 0, 0, 0.4);
+    }
+
+    body[data-theme="light"] {
+      --bg-body: #f8fafc;
+      --bg-section: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-header: rgba(255, 255, 255, 0.9);
+      --text-primary: #1f2937;
+      --text-secondary: #4b5563;
+      --border-color: #e5e7eb;
+      --shadow-color: rgba(0, 0, 0, 0.15);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    .bg-theme-section {
+      background-color: var(--bg-section);
+    }
+    .bg-theme-card {
+      background-color: var(--bg-card);
+    }
+    .text-theme-primary {
+      color: var(--text-primary);
+    }
+    .text-theme-secondary {
+      color: var(--text-secondary);
+    }
+    .border-theme-divider {
+      border-color: var(--border-color);
+    }
+
+    /* Accent Colors */
+    .accent-blue { color: #4285F4; }
+    .accent-green { color: #34A853; }
+    .accent-red { color: #EA4335; }
+    .accent-yellow { color: #FBBC05; }
+    .bg-accent-blue { background-color: #4285F4; }
+    .bg-accent-green { background-color: #34A853; }
+    .bg-accent-red { background-color: #EA4335; }
+    .bg-accent-yellow { background-color: #FBBC05; }
+
+    /* Smooth Scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Card Hover */
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px -1px var(--shadow-color);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px var(--shadow-color);
+    }
+
+    /* Scroll Fade-in */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body data-theme="dark" class="antialiased tracking-tight">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-[var(--bg-header)] backdrop-blur-md border-b border-theme-divider shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-5 h-20">
+      <!-- Logo -->
+      <a href="#hero" class="flex items-center gap-3">
+        <img src="Gemini_Generated_Image_u4mgjku4mgjku4mg-removebg-preview.png" alt="Smart Minds Solutions" class="h-10 w-auto">
+        <span class="hidden sm:inline text-2xl font-extrabold">Smart Minds Solutions</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="#about" class="hover:text-accent-blue text-theme-secondary">About</a>
+        <a href="#services" class="hover:text-accent-green text-theme-secondary">Services</a>
+        <a href="#why-us" class="hover:text-accent-red text-theme-secondary">Why Us</a>
+        <a href="#contact" class="bg-accent-yellow text-gray-900 px-5 py-2 rounded-full font-semibold hover:opacity-90 shadow-md">Free Consultation</a>
+      </nav>
+
+      <!-- Mobile -->
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="p-2 rounded-lg text-theme-secondary hover:text-accent-yellow">
+          <i data-lucide="sun" id="theme-icon" class="w-6 h-6"></i>
+        </button>
+        <button id="mobile-menu-button" class="md:hidden text-theme-secondary hover:text-accent-yellow">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-theme-card border-t border-theme-divider shadow-lg">
+      <nav class="flex flex-col items-center py-4 space-y-3">
+        <a href="#about" class="text-theme-secondary hover:text-accent-blue">About</a>
+        <a href="#services" class="text-theme-secondary hover:text-accent-green">Services</a>
+        <a href="#why-us" class="text-theme-secondary hover:text-accent-red">Why Us</a>
+        <a href="#contact" class="bg-accent-yellow text-gray-900 px-6 py-2 rounded-full font-semibold hover:opacity-90">Free Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="pt-28 pb-24 text-center fade-in-up bg-theme-section">
+    <div class="max-w-5xl mx-auto px-4">
+      <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight">
+        Empower Your Business with 
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-accent-blue via-accent-green to-accent-yellow">
+          Smart IT Solutions
+        </span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-theme-secondary max-w-2xl mx-auto">
+        Helping organizations grow, automate, and modernize through reliable, innovative technology.
+      </p>
+      <div class="mt-10">
+        <a href="#contact" class="bg-accent-red text-white font-semibold px-8 py-4 rounded-full hover:opacity-90 transition transform hover:scale-105 shadow-lg text-lg">
+          Book a Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 fade-in-up bg-theme-section">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-accent-blue font-semibold uppercase tracking-wide">🧠 About Us</h2>
+        <h3 class="mt-2 text-3xl sm:text-5xl font-extrabold">Bridging the Digital Gap for Small Businesses</h3>
+        <p class="mt-4 text-theme-secondary text-lg leading-relaxed">
+          We empower small businesses with smart, affordable, and scalable IT solutions to achieve digital excellence.
+        </p>
+      </div>
+      <div class="bg-theme-card p-8 rounded-2xl border-l-4 border-accent-green shadow-lg">
+        <h4 class="text-2xl font-bold mb-3 text-accent-green">💡 Our Mission</h4>
+        <p class="text-theme-secondary text-lg">
+          Deliver accessible, impactful, and innovative digital solutions that accelerate business growth and innovation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-20 fade-in-up border-y border-theme-divider bg-theme-section">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-accent-red uppercase font-semibold tracking-wide">⚙️ Our Services</h2>
+      <h3 class="mt-2 text-3xl sm:text-5xl font-extrabold">End-to-End Digital Transformation</h3>
+      <p class="mt-4 text-lg text-theme-secondary max-w-3xl mx-auto">
+        Comprehensive technology solutions designed to maximize efficiency, scalability, and security.
+      </p>
+
+      <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="service-card bg-theme-card rounded-2xl border-t-4 border-accent-blue p-8">
+          <i data-lucide="brain" class="h-10 w-10 accent-blue mb-4"></i>
+          <h4 class="text-xl font-bold mb-2">IT Consulting & Support</h4>
+          <p class="text-theme-secondary">Tailored IT strategies to align with your business goals and ensure smooth operations.</p>
+        </div>
+
+        <div class="service-card bg-theme-card rounded-2xl border-t-4 border-accent-green p-8">
+          <i data-lucide="layout-grid" class="h-10 w-10 accent-green mb-4"></i>
+          <h4 class="text-xl font-bold mb-2">Web & App Development</h4>
+          <p class="text-theme-secondary">Modern, mobile-ready platforms designed to grow your online presence.</p>
+        </div>
+
+        <div class="service-card bg-theme-card rounded-2xl border-t-4 border-accent-red p-8">
+          <i data-lucide="cloud" class="h-10 w-10 accent-red mb-4"></i>
+          <h4 class="text-xl font-bold mb-2">Cloud Solutions</h4>
+          <p class="text-theme-secondary">Seamless cloud setup and migration for scalability and reliability.</p>
+        </div>
+
+        <div class="service-card bg-theme-card rounded-2xl border-t-4 border-accent-yellow p-8">
+          <i data-lucide="bot" class="h-10 w-10 accent-yellow mb-4"></i>
+          <h4 class="text-xl font-bold mb-2">Automation & Smart Tools</h4>
+          <p class="text-theme-secondary">Boost efficiency through intelligent automation and custom tools.</p>
+        </div>
+
+        <div class="service-card bg-theme-card rounded-2xl border-t-4 border-accent-blue p-8">
+          <i data-lucide="shield" class="h-10 w-10 accent-blue mb-4"></i>
+          <h4 class="text-xl font-bold mb-2">Cybersecurity</h4>
+          <p class="text-theme-secondary">Protect your systems with next-gen security and 24/7 monitoring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why-us" class="py-20 fade-in-up bg-theme-section">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-accent-green uppercase font-semibold tracking-wide">🎯 Why Choose Us</h2>
+      <h3 class="mt-2 text-3xl sm:text-5xl font-extrabold">Your Growth Is Our Goal</h3>
+      <div class="mt-12 grid md:grid-cols-2 gap-10 text-left">
+        <div class="flex items-start gap-4">
+          <i data-lucide="check-circle" class="h-7 w-7 accent-blue mt-1"></i>
+          <div>
+            <h4 class="text-xl font-semibold">Focused on SMB Success</h4>
+            <p class="text-theme-secondary mt-2">We craft scalable solutions that grow alongside your business.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <i data-lucide="check-circle" class="h-7 w-7 accent-green mt-1"></i>
+          <div>
+            <h4 class="text-xl font-semibold">Innovation + Practicality</h4>
+            <p class="text-theme-secondary mt-2">Blending innovation with proven, result-driven solutions.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <i data-lucide="check-circle" class="h-7 w-7 accent-red mt-1"></i>
+          <div>
+            <h4 class="text-xl font-semibold">Customer-Centric</h4>
+            <p class="text-theme-secondary mt-2">Transparent communication and dedicated post-project support.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <i data-lucide="check-circle" class="h-7 w-7 accent-yellow mt-1"></i>
+          <div>
+            <h4 class="text-xl font-semibold">Modern Design Language</h4>
+            <p class="text-theme-secondary mt-2">Clean aesthetics and intuitive design for your digital presence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact" class="py-20 bg-accent-blue text-center fade-in-up">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white">Ready to Modernize Your Business?</h2>
+      <p class="mt-4 text-lg text-indigo-100">Let’s explore how our Smart IT Solutions can accelerate your growth.</p>
+      <a href="#" class="mt-8 inline-block bg-white text-gray-900 font-bold py-4 px-8 rounded-full text-lg hover:bg-gray-100 transform hover:scale-105 transition shadow-xl">
+        Book Your Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-theme-section border-t border-theme-divider py-12 text-center fade-in-up">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center gap-6 mb-6">
+        <a href="#about" class="text-theme-secondary hover:text-accent-blue">About</a>
+        <a href="#services" class="text-theme-secondary hover:text-accent-green">Services</a>
+        <a href="#why-us" class="text-theme-secondary hover:text-accent-red">Why Us</a>
+        <a href="#contact" class="text-theme-secondary hover:text-accent-yellow">Contact</a>
+      </div>
+      <div class="flex justify-center gap-6 mb-6">
+        <a href="#" class="hover:text-accent-blue text-theme-secondary"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+        <a href="#" class="hover:text-accent-red text-theme-secondary"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+        <a href="#" class="hover:text-accent-green text-theme-secondary"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+      </div>
+      <p class="text-theme-secondary text-sm">&copy; 2025 Smart Minds Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Lucide Icons
+    lucide.createIcons();
+
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      themeIcon.setAttribute('data-lucide', newTheme === 'dark' ? 'sun' : 'moon');
+      lucide.createIcons();
+    });
+
+    // Mobile Menu
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Scroll Fade-In
+    const fadeEls = document.querySelectorAll('.fade-in-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.2 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
